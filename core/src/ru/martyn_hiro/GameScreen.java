@@ -36,19 +36,10 @@ public class GameScreen {
     }
 
     public void update(float dt) {
-        //считаем расстояние
-        float distanceBetweenHeroMonster = hero.getPosition().dst(monster.getPosition());
 
         hero.update(dt);
-        monster.update(dt, distanceBetweenHeroMonster);
+        monster.update(dt);
 
-        //получение урона зависит от радиуса атаки и того кто атакует
-        if (distanceBetweenHeroMonster <= 100f) {
-            monster.takeDMG(hero.getDmg(), dt);
-        }
-        if (distanceBetweenHeroMonster <= 100f) {
-            hero.takeDMG(monster.getDmg(), dt);
-        }
     }
 
     public Hero getHero() {
