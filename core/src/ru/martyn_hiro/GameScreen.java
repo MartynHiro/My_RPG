@@ -3,10 +3,10 @@ package ru.martyn_hiro;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
-import ru.martyn_hiro.heroes.Hero;
-import ru.martyn_hiro.heroes.HeroWarrior;
-import ru.martyn_hiro.monsters.Monster;
-import ru.martyn_hiro.monsters.Slime;
+import ru.martyn_hiro.game_characters.heroes.Hero;
+import ru.martyn_hiro.game_characters.heroes.HeroWarrior;
+import ru.martyn_hiro.game_characters.monsters.Monster;
+import ru.martyn_hiro.game_characters.monsters.Slime;
 
 public class GameScreen {
     private SpriteBatch batch;
@@ -20,7 +20,7 @@ public class GameScreen {
     }
 
     public void create() {
-        this.hero = new HeroWarrior();
+        this.hero = new HeroWarrior(this);
         this.monster = new Slime(this);
     }
 
@@ -28,7 +28,7 @@ public class GameScreen {
         //спрашиваем у видеокарты про задержки, необходимо для корректного действия не зависимого от FPS
         deltaTime = Gdx.graphics.getDeltaTime();
         update(deltaTime);
-        ScreenUtils.clear(0.3f, 0.93f, 0.2f, 1);
+        ScreenUtils.clear(0.5f, 0.5f, 0.5f, 1);
         batch.begin();
         hero.render(batch);
         monster.render(batch);

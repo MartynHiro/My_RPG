@@ -1,9 +1,7 @@
 package ru.martyn_hiro;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGame extends ApplicationAdapter {
     private GameScreen gameScreen;
@@ -26,7 +24,7 @@ public class MyGame extends ApplicationAdapter {
     //метод с логикой
     public void update() {
 
-	}
+    }
 
     @Override
     public void dispose() {
